@@ -23,8 +23,7 @@ public class Main {
         }
         if (salary >= 50_000 && salary < 80) {
             limitCreditCard = 1.2 * limitCreditCard;
-        }
-        if (salary >= 80_000) {
+        } else if (salary >= 80_000) {
             limitCreditCard = 1.5 * limitCreditCard;
         }
         System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + limitCreditCard + " рублей");
@@ -62,12 +61,13 @@ public class Main {
             rate = rate - 0.7;
         }
         monthPayment = (wantedSum * (1 + rate / 100)) / 12;
+        System.out.println(rate);
         if (maxPayment > monthPayment) {
             System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. " +
-                    "Платеж по кредиту " + monthPayment + "рублей. Кредит одобрен.");
+                    "Платеж по кредиту " + monthPayment + " рублей. Кредит одобрен.");
         } else {
             System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxPayment + " рублей. " +
-                    "Платеж по кредиту " + monthPayment + "рублей. В кредите отказано.");
+                    "Платеж по кредиту " + monthPayment + " рублей. В кредите отказано.");
         }
 
 
